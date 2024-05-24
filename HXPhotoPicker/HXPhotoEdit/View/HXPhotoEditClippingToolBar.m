@@ -58,10 +58,16 @@
 }
 - (void)setRotateAlpha:(CGFloat)alpha {
     if (alpha == 1) {
+        self.cancelBtn.userInteractionEnabled = YES;
+        self.confirmBtn.userInteractionEnabled = YES;
         self.collectionView.userInteractionEnabled = YES;
     }else {
+        self.cancelBtn.userInteractionEnabled = NO;
+        self.confirmBtn.userInteractionEnabled = NO;
         self.collectionView.userInteractionEnabled = NO;
     }
+    self.cancelBtn.alpha = alpha;
+    self.confirmBtn.alpha = alpha;
     self.collectionView.alpha = alpha;
 }
 - (void)setEnableReset:(BOOL)enableReset {
