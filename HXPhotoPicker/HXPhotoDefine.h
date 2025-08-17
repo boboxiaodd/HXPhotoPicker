@@ -108,8 +108,8 @@
 //判断iPHone12 ProMax
 #define HX_Is_iPhoneTwelveProMax ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1284, 2778), [[UIScreen mainScreen] currentMode].size) && !HX_UI_IS_IPAD : NO)
 
-#define HX_IS_IPhoneX_All (HX_Is_iPhoneX || HX_Is_iPhoneXR || HX_Is_iPhoneXS || HX_Is_iPhoneXS_MAX || HX_IS_IPHONEX || HX_Is_iPhoneTwelveMini || HX_Is_iPhoneTwelvePro || HX_Is_iPhoneTwelveProMax)
-
+//判断是否为刘海屏
+#define HX_IS_IPhoneX_All [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.top > 0
 // 导航栏 + 状态栏 的高度
 #define hxNavigationBarHeight ((HX_UI_IS_IPAD ? 50 : 44) + HXStatusBarHeight)
 #define hxTopMargin (HX_IS_IPhoneX_All ? 44 : 0)
